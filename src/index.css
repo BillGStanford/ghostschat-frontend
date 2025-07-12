@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ghost-50: #f8fafc;
+    --ghost-100: #f1f5f9;
+    --ghost-200: #e2e8f0;
+    --ghost-300: #cbd5e1;
+    --ghost-400: #94a3b8;
+    --ghost-500: #64748b;
+    --ghost-600: #475569;
+    --ghost-700: #334155;
+    --ghost-800: #1e293b;
+    --ghost-900: #0f172a;
+    --phantom-50: #fafafa;
+    --phantom-100: #f4f4f5;
+    --phantom-200: #e4e4e7;
+    --phantom-300: #d4d4d8;
+    --phantom-400: #a1a1aa;
+    --phantom-500: #71717a;
+    --phantom-600: #52525b;
+    --phantom-700: #3f3f46;
+    --phantom-800: #27272a;
+    --phantom-900: #18181b;
+  }
+
+  body {
+    @apply font-mono bg-ghost-900 text-ghost-100;
+  }
+
+  /* Scrollbar styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.ghost.600') theme('colors.ghost.800');
+  }
+
+  /* Chrome, Edge, Safari */
+  *::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-ghost-800 rounded-full;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-ghost-600 rounded-full hover:bg-ghost-500;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .shadow-glow {
+    @apply shadow-[0_0_15px_rgba(124,58,237,0.5)] hover:shadow-[0_0_25px_rgba(124,58,237,0.8)];
+  }
+}
